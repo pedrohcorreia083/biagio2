@@ -240,6 +240,7 @@ h6 {
 ------------------------------*/
 .scrolled .header {
   --surface-color: rgba(0, 0, 0, 0.7);
+  background: var(--nav-dropdown-hover-color);
 }
 
 /*--------------------------------------------------------------
@@ -1142,6 +1143,44 @@ section,
   line-height: 1.8;
   margin-bottom: 1.5rem;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
+}
+
+.why-us .content .error-actions {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.why-us .content .error-actions .btn-home {
+  padding: 0.8rem 1.8rem;
+  border-radius: 8px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.why-us .content .error-actions .btn-home i {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.why-us .content .error-actions .btn-home:hover i {
+  transform: translateX(3px);
+}
+
+.why-us .content .error-actions .btn-home {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  border: none;
+}
+
+.why-us .content .error-actions .btn-home:hover {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 15%);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px color-mix(in srgb, var(--accent-color), transparent 70%);
 }
 
 .why-us .stats-row {
