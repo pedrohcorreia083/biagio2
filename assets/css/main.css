@@ -150,7 +150,7 @@ h6 {
 }
 
 .header .logo img {
-  max-height: 50px;
+  max-height: 80px;
   margin-right: 8px;
 }
 
@@ -484,7 +484,7 @@ h6 {
 --------------------------------------------------------------*/
 .footer {
   color: var(--default-color);
-  background-color: var(--background-color);
+  background-color: #707070;
   font-size: 14px;
   position: relative;
 }
@@ -755,7 +755,8 @@ h6 {
 }
 
 .page-title h1 {
-  font-size: 42px;
+  font-size: 50px;
+  text-transform: math-auto;
   font-weight: 700;
   margin-bottom: 10px;
 }
@@ -922,6 +923,11 @@ section,
   font-weight: 700;
   margin-bottom: 1.5rem;
   line-height: 1.2;
+}
+
+.hero .hero-content .logo-banner {
+  height: auto;
+  width: 30%;
 }
 
 .hero .hero-content .content-box p {
@@ -1721,7 +1727,7 @@ section,
 .featured-services .service-card {
   position: relative;
   background: var(--surface-color);
-  border-radius: 15px;
+  border-radius: 5px;
   overflow: hidden;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
@@ -1777,7 +1783,6 @@ section,
   left: 0;
   right: 0;
   height: 40px;
-  background: linear-gradient(to top, var(--surface-color), transparent);
 }
 
 .featured-services .service-content {
@@ -2553,7 +2558,6 @@ section,
 
 .travel-about .story-content p {
   font-size: 1.1rem;
-  line-height: 1.7;
   color: color-mix(in srgb, var(--default-color), transparent 15%);
   margin-bottom: 1.5rem;
 }
