@@ -889,22 +889,31 @@ section,
   z-index: 2;
 }
 
-.hero .hero-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
 .hero .hero-content {
-  position: relative;
-  z-index: 3;
-  padding: 3rem 0;
+  position: absolute;
+  /* sobrepõe o carrossel */
+  top: 50%;
+  /* centraliza verticalmente */
+  left: 50%;
+  /* centraliza horizontalmente */
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  /* acima da imagem */
+  text-align: left;
   width: 100%;
+  padding: 0;
+  /* remove espaçamentos extras */
 }
 
 .hero .hero-content .content-box {
-  padding: 2rem 0;
+  padding: 0;
+  /* remove o espaço preto */
+}
+
+.hero .hero-content .logo-banner {
+  width: 25%;
+  /* ajuste o tamanho conforme necessário */
+  height: auto;
 }
 
 .hero .hero-content .content-box .badge-accent {
@@ -1091,8 +1100,47 @@ section,
 
 @media (max-width: 768px) {
   .hero .hero-wrapper {
-    min-height: 500px;
+    position: relative;
+    width: 100%;
+    /* ocupa a tela toda */
+    display: flex;
+    align-items: center;
+    min-height: auto;
+    /* remove aquele min-height que você colocou */
   }
+
+  .hero .hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .hero .hero-content {
+    position: absolute;
+    /* fica sobre o carrossel */
+    top: 50%;
+    /* meio da tela */
+    left: 5%;
+    /* encostada no lado esquerdo */
+    transform: translateY(-50%);
+    z-index: 5;
+    padding: 0;
+  }
+
+  .hero .hero-content .content-box {
+    padding: 0;
+    /* sem espaço extra */
+  }
+
+  .hero .hero-content .logo-banner {
+    width: 30%;
+    /* aumenta no mobile se quiser */
+    height: auto;
+  }
+
 
   .hero .hero-image::after {
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.7) 100%);
@@ -1131,7 +1179,6 @@ section,
     font-size: 1.8rem;
   }
 }
-
 
 /*--------------------------------------------------------------
 # Why Us Section
@@ -1192,6 +1239,12 @@ section,
   display: flex;
   gap: 2rem;
   margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .hide-mobile {
+    display: none !important;
+  }
 }
 
 @media (max-width: 576px) {
@@ -2339,14 +2392,23 @@ section,
 
 .call-to-action .benefits-showcase .benefits-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  /* sempre 3 colunas */
+  gap: 1rem;
 }
+
+@media (max-width: 768px) {
+  .call-to-action .benefits-showcase .benefits-grid {
+    gap: 0.5rem;
+    /* menos espaço entre as imagens no mobile */
+  }
+}
+
+
 
 .call-to-action .benefits-showcase .benefit-card {
   background: var(--surface-color);
-  padding: 2.5rem;
-  border-radius: 20px;
+  padding: 0.5rem;
   text-align: center;
   position: relative;
   overflow: hidden;
